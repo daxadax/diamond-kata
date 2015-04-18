@@ -4,18 +4,21 @@ class Kata
     @input = input
     @alphabet = ('a'..'z').to_a
     @d_number = @alphabet.index(input)
+    @grid = (@d_number * 2) + 1
   end
 
   def run
-    total_lines = (@d_number * 2) + 1
-
-    diamond = total_lines.times.map do |i|
-      @input
+    @grid.times.map do |i|
+      build_row_for(i)
     end
+  end
 
-    diamond.each do |row|
-      puts row + "\n"
-    end
+  private
+
+  def build_row_for(index)
+    character = @alphabet[index]
+
+    character.center(@grid, '_')
   end
 
 end

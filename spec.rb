@@ -24,5 +24,9 @@ class KataSpec < Minitest::Spec
     it 'returns 3 rows' do
       assert_equal 3, result.size
     end
+
+    it 'returns "_a_" as the first row' do
+      assert_equal '_a_', result.first
+    end
   end
 end
