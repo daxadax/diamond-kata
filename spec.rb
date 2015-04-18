@@ -32,5 +32,9 @@ class KataSpec < Minitest::Spec
     it 'returns "_a_" as the last row' do
       assert_equal '_a_', result.last
     end
+
+    it 'returns "b_b" as the middle row' do
+      assert_equal 'b_b', result[1]
+    end
   end
 end

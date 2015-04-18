@@ -19,10 +19,15 @@ class Kata
     if index <= @d_number
       character = @alphabet[index]
     else
-      character = @alphabet[index - @d_number - 1]
+      index -= (@d_number + 1)
+      character = @alphabet[index]
     end
 
-    character.center(@grid, '_')
+    if index.zero?
+      character.center(@grid, '_')
+    else
+      "#{character}_#{character}"
+    end
   end
 
 end
