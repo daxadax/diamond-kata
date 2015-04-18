@@ -16,7 +16,11 @@ class Kata
   private
 
   def build_row_for(index)
-    character = @alphabet[index]
+    if index <= @d_number
+      character = @alphabet[index]
+    else
+      character = @alphabet[index - @d_number - 1]
+    end
 
     character.center(@grid, '_')
   end
