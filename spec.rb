@@ -44,5 +44,10 @@ class KataSpec < Minitest::Spec
     it 'returns 5 rows' do
       assert_equal 5, result.size
     end
+
+    it 'returns "__a__" as the first and last rows' do
+      assert_equal '__a__', result.first
+      assert_equal '__a__', result.last
+    end
   end
 end

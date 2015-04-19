@@ -15,11 +15,13 @@ class Kata
 
   private
 
-  def build_row_for(index)
-    index -= (@alphabet_index + 1) if index > @alphabet_index
-    character = @alphabet[index]
+  def build_row_for(position)
+    if position > @alphabet_index
+      position -= (position - @alphabet_index) * 2
+    end
+    character = @alphabet[position]
 
-    if index.zero?
+    if position.zero?
       character.center(@grid, '_')
     else
       "#{character}_#{character}"
