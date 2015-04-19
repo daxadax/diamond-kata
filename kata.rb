@@ -3,8 +3,8 @@ class Kata
   def initialize(input)
     @input = input
     @alphabet = ('a'..'z').to_a
-    @d_number = @alphabet.index(input)
-    @grid = (@d_number * 2) + 1
+    @alphabet_index = @alphabet.index(input)
+    @grid = (@alphabet_index * 2) + 1
   end
 
   def run
@@ -16,7 +16,7 @@ class Kata
   private
 
   def build_row_for(index)
-    index -= (@d_number + 1) if index > @d_number
+    index -= (@alphabet_index + 1) if index > @alphabet_index
     character = @alphabet[index]
 
     if index.zero?
