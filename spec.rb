@@ -25,11 +25,8 @@ class KataSpec < Minitest::Spec
       assert_equal 3, result.size
     end
 
-    it 'returns "_a_" as the first row' do
+    it 'returns "_a_" as the first and last row' do
       assert_equal '_a_', result.first
-    end
-
-    it 'returns "_a_" as the last row' do
       assert_equal '_a_', result.last
     end
 
