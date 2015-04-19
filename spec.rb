@@ -51,5 +51,9 @@ class KataSpec < Minitest::Spec
       assert_equal '_b_b_', result[1]
       assert_equal '_b_b_', result[3]
     end
+
+    it 'returns "c___c" as the middle row' do
+      assert_equal 'c___c', result[2]
+    end
   end
 end

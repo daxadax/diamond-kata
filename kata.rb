@@ -20,6 +20,8 @@ class Kata
 
     if position.zero?
       character.center(@grid, '_')
+    elsif character == @input
+      character + '_' * (@grid - 2) + character
     else
       build_inner_row_for(character)
     end
