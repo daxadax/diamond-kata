@@ -37,4 +37,12 @@ class KataSpec < Minitest::Spec
       assert_equal 'b_b', result[1]
     end
   end
+
+  describe 'c' do
+    let(:input) { 'c' }
+
+    it 'returns 5 rows' do
+      assert_equal 5, result.size
+    end
+  end
 end
