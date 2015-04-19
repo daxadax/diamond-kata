@@ -56,4 +56,31 @@ class KataSpec < Minitest::Spec
       assert_equal 'c___c', result[2]
     end
   end
+
+  describe 'd' do
+    let(:input) { 'd' }
+
+    it 'returns 7 rows' do
+      assert_equal 7, result.size
+    end
+
+    it 'returns "___a___" as the first and last rows' do
+      assert_equal '___a___', result.first
+      assert_equal '___a___', result.last
+    end
+
+    it 'returns "__b_b__" as the second and sixth rows' do
+      assert_equal '__b_b__', result[1]
+      assert_equal '__b_b__', result[5]
+    end
+
+    it 'returns "_c___c_" as the third and fifth rows' do
+      assert_equal '_c___c_', result[2]
+      assert_equal '_c___c_', result[4]
+    end
+
+    it 'returns "d_____d" as the middle row' do
+      assert_equal 'd_____d', result[3]
+    end
+  end
 end

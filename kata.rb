@@ -20,28 +20,18 @@ class Kata
 
     if position.zero?
       character.center(@grid, '_')
-    elsif character == @input
-      character + '_' * (@grid - 2) + character
     else
-      build_inner_row_for(character)
+      row = character + spacers_for(position) + character
+      row.center(@grid, '_')
     end
+  end
+
+  def spacers_for(position)
+    '_' * (position + (position - 1))
   end
 
   def determine_position(position)
     return position if position <= @alphabet_index
     position - ((position - @alphabet_index) * 2)
   end
-
-  def build_inner_row_for(character)
-    @grid.times.map do |i|
-      if @alphabet_index.even? && i.odd?
-        character
-      elsif @alphabet_index.odd? && i.even?
-        character
-      else
-        '_'
-      end
-    end.join
-  end
-
 end
