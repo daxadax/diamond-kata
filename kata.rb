@@ -24,7 +24,16 @@ class Kata
     if position.zero?
       character.center(@grid, '_')
     else
-      "#{character}_#{character}"
+      row = @grid.times.map do |i|
+        if @alphabet_index.even? && i.odd?
+          character
+        elsif @alphabet_index.odd? && i.even?
+          character
+        else
+          '_'
+        end
+      end
+      row.join
     end
   end
 
